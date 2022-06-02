@@ -1,13 +1,11 @@
 package Conexion;
 
 import java.sql.*;
-import oracle.jdbc.pool.OracleDataSource;
+import oracle.jdbc.pool.*;
 
 public class Conexion {
 
     Connection conexion;
-    OracleDataSource ds;
-    CallableStatement cs;
    
     public Conexion() {
         this.getConexion();
@@ -16,9 +14,7 @@ public class Conexion {
     public void setConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");  
-          ds= new OracleDataSource();
-          ds.setURL("jdbc:oracle:thin:@//127.0.0.1:1521/orcl");
-          conexion = ds.getConnection("project","123456");
+          conexion = DriverManager.getConnection("jdbc:oracle:thin:@//127.0.0.1:1521/orcl","project","12345678");;
           
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage() + "No conecta" );
