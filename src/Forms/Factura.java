@@ -18,7 +18,7 @@ public class Factura extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         codigo="$";
-        this.jTextField2.setText(codigo);
+       
     }
 
     /**
@@ -31,13 +31,13 @@ public class Factura extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -62,13 +62,24 @@ public class Factura extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(83, 89, 108));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setText("Ingrese la cantidad");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 160, 20));
-
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel4.setText("Estado de Cuenta");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 290, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 290, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 330, 190));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setText("7");
@@ -105,9 +116,6 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 60, 50));
-
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 190, 50));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton4.setText("5");
@@ -238,6 +246,7 @@ public class Factura extends javax.swing.JFrame {
         jButton17.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/factura.jpeg"))); // NOI18N
         jButton17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton17.setEnabled(false);
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton17ActionPerformed(evt);
@@ -247,10 +256,20 @@ public class Factura extends javax.swing.JFrame {
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/consultar.jpeg"))); // NOI18N
         jButton18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 100, 60));
 
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.jpeg"))); // NOI18N
         jButton19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 163, 100, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 706, 713));
@@ -261,61 +280,60 @@ public class Factura extends javax.swing.JFrame {
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
          codigo+="0";
-        this.jTextField2.setText(codigo);
+       
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         codigo+="7";
-        this.jTextField2.setText(codigo);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
          codigo+="8";
-        this.jTextField2.setText(codigo);
+     
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
          codigo+="9";
-        this.jTextField2.setText(codigo);
+     
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
          codigo+="4";
-        this.jTextField2.setText(codigo);
+       
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
          codigo+="5";
-        this.jTextField2.setText(codigo);
+      
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
          codigo+="6";
-        this.jTextField2.setText(codigo);
+  
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          codigo+="1";
-        this.jTextField2.setText(codigo);
+   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
          codigo+="2";
-        this.jTextField2.setText(codigo);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
          codigo+="3";
-        this.jTextField2.setText(codigo);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -323,7 +341,7 @@ public class Factura extends javax.swing.JFrame {
        try{
            if (codigo.length()>1) {
                 codigo= codigo.substring(0, codigo.length()-1);
-                this.jTextField2.setText(codigo);
+        
            }
            
         }catch(java.lang.StringIndexOutOfBoundsException e){
@@ -333,6 +351,9 @@ public class Factura extends javax.swing.JFrame {
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
+        Retiro rt = new Retiro();
+        this.setVisible(false);
+        rt.setVisible(true);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
@@ -342,6 +363,20 @@ public class Factura extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+        Consultar ct = new Consultar();
+        this.setVisible(false);
+        ct.setVisible(true);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        IngresoPin pin = new IngresoPin();
+        this.setVisible(false);
+        pin.setVisible(true);
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,11 +438,11 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -228,6 +228,7 @@ public class Retiro extends javax.swing.JFrame {
         jButton16.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/retiro.jpeg"))); // NOI18N
         jButton16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton16.setEnabled(false);
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
@@ -247,10 +248,20 @@ public class Retiro extends javax.swing.JFrame {
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/consultar.jpeg"))); // NOI18N
         jButton18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 100, 60));
 
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.jpeg"))); // NOI18N
         jButton19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 163, 100, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 706, 713));
@@ -337,11 +348,28 @@ public class Retiro extends javax.swing.JFrame {
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
+        Factura ft = new Factura();
+        this.setVisible(false);
+        ft.setVisible(true);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+        Consultar ct = new Consultar();
+        this.setVisible(false);
+        ct.setVisible(true);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+       IngresoPin pin = new IngresoPin();
+        this.setVisible(false);
+        pin.setVisible(true);
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     /**
      * @param args the command line arguments
