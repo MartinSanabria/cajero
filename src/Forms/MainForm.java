@@ -4,10 +4,8 @@
  */
 package Forms;
 
-/**
- *
- * @author Luis
- */
+import Identidades.*;
+
 public class MainForm extends javax.swing.JFrame {
 
     /**
@@ -19,6 +17,9 @@ public class MainForm extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         codigo="";
         
+        Cliente obj = new Cliente();
+        
+        obj.listarCliente();
     }
 
     /**
