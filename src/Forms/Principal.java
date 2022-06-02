@@ -13,14 +13,19 @@ import Forms.Factura;
  */
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainForm
-     */
     public String codigo;
-    public Principal() {
+    
+    public Principal(String Pcodigo) {
         initComponents();
         this.setLocationRelativeTo(null);
-        codigo="";
+        this.codigo = Pcodigo;
+        
+        System.out.println(Pcodigo);
+    }
+
+    private Principal() {
+        initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -50,10 +55,10 @@ public class Principal extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        btn_retirar = new javax.swing.JButton();
+        btn_factura = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(94, 138, 130));
@@ -217,25 +222,25 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 460, 280));
 
-        jButton16.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/retiro.jpeg"))); // NOI18N
-        jButton16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        btn_retirar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn_retirar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/retiro.jpeg"))); // NOI18N
+        btn_retirar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_retirar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                btn_retirarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 90, 60));
+        jPanel1.add(btn_retirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, 100, 60));
 
-        jButton17.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/factura.jpeg"))); // NOI18N
-        jButton17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        btn_factura.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn_factura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/factura.jpeg"))); // NOI18N
+        btn_factura.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_factura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                btn_facturaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 100, 60));
+        jPanel1.add(btn_factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 100, 60));
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/consultar.jpeg"))); // NOI18N
         jButton18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -244,16 +249,16 @@ public class Principal extends javax.swing.JFrame {
                 jButton18ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 100, 60));
+        jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 100, 60));
 
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.jpeg"))); // NOI18N
-        jButton19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.jpeg"))); // NOI18N
+        btn_cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                btn_cancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 163, 100, 60));
+        jPanel1.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 100, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 706, 713));
 
@@ -330,19 +335,19 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton15ActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void btn_retirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_retirarActionPerformed
         // TODO add your handling code here:
         Retiro retiro = new Retiro();
         this.setVisible(false);
         retiro.setVisible(true);
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_btn_retirarActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void btn_facturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_facturaActionPerformed
         // TODO add your handling code here:
         Factura fact = new Factura();
         this.setVisible(false);
         fact.setVisible(true);
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_btn_facturaActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
@@ -352,12 +357,12 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         // TODO add your handling code here:
         IngresoPin pin = new IngresoPin();
         this.setVisible(false);
         pin.setVisible(true);
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -396,14 +401,14 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_factura;
+    private javax.swing.JButton btn_retirar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

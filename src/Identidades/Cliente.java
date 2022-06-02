@@ -1,35 +1,46 @@
 
 package Identidades;
 
-import java.sql.Connection;
-import java.sql.Statement;
-import Conexion.*;
-import java.sql.ResultSet;
-
-
 public class Cliente {
     
-    private Conexion ObjConexion;
+    
+    private String id_cliente;
+    private String nombre;
+    private String codigo_cuenta;
 
     public Cliente() {
-        ObjConexion = new Conexion();
+        this.id_cliente = "";
+        this.nombre = "";
+        this.codigo_cuenta = "";
     }
- 
-    public void listarCliente(){
-        String sql = "SELECT * FROM cliente";
-        
-        try {
-            Connection conexion = this.ObjConexion.getConexion();
-            Statement stm = conexion.createStatement();
-            ResultSet resultados = stm.executeQuery(sql);
-            
-            while(resultados.next()){
-                System.out.println(resultados.getString(2));
-            }
-            
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+    
+    // Metodos getter
+
+    public String getCodigo_cuenta() {
+        return codigo_cuenta;
     }
+
+    public String getId_cliente() {
+        return id_cliente;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
+    // metodos setter
+
+    public void setCodigo_cuenta(String codigo_cuenta) {
+        this.codigo_cuenta = codigo_cuenta;
+    }
+
+    public void setId_cliente(String id_cliente) {
+        this.id_cliente = id_cliente;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     
 }
