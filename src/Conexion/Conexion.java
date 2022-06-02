@@ -15,7 +15,7 @@ public final class Conexion {
     public void setConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");  
-            conexion = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl","project","123456");;
+            conexion = DriverManager.getConnection("jdbc:oracle:thin:@//LAPTOP-UILKNB3V.mshome.net:1521/orcl.mshome.net","project","123456");;
           
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error: " + e.getMessage() + " No conecta" );
