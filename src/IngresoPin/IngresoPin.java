@@ -5,11 +5,17 @@
 package IngresoPin;
 
 
+<<<<<<< HEAD:src/IngresoPin/IngresoPin.java
 /**
  *
  * @author Luis
  */
 public class IngresoPin extends javax.swing.JFrame {
+=======
+import Identidades.*;
+
+public class MainForm extends javax.swing.JFrame {
+>>>>>>> bb228343959addf3380bf2c416d7f29066c413dc:src/Forms/MainForm.java
 
     /**
      * Creates new form MainForm
