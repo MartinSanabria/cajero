@@ -15,10 +15,10 @@ public final class Conexion {
     public void setConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");  
-          conexion = DriverManager.getConnection("jdbc:oracle:thin:@//127.0.0.1:1521/orcl","project","123456");;
+          conexion = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl","project","123456");;
           
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error: " + e.getMessage() + "No conecta" );
+            System.out.println("Error: " + e.getMessage() + " No conecta" );
         } 
     }
 

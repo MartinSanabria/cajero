@@ -51,16 +51,16 @@ Alter table transaccion add constraint tipoTransac_fk foreign key (id_tipo_trans
 
 
 --INSERT TABLE CLIENTE
-INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, cudad, departamento)
+INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, ciudad, departamento)
 VALUES(cliente_seq.NextVal, 'Anderson', 'Alberto', 'Carcamo', 'Rivera', '1212-4556', 'El Salvador', 'Santa Ana');
-INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, cudad, departamento)
-VALUES(cliente_seq.NextVal, 'Diego', 'Esau', 'Hernandez', 'Magaña', '7863-3223', 'El Salvador', 'Santa Ana');
-INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, cudad, departamento)
+INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, ciudad, departamento)
+VALUES(cliente_seq.NextVal, 'Diego', 'Esau', 'Hernandez', 'Magaï¿½a', '7863-3223', 'El Salvador', 'Santa Ana');
+INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, ciudad, departamento)
 VALUES(cliente_seq.NextVal, 'Luis', 'Enrique', 'Vasquez', 'Aquila', '6812-1212', 'El Salvador', 'Santa Ana');
-INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, cudad, departamento)
+INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, ciudad, departamento)
 VALUES(cliente_seq.NextVal, 'Jose', 'Martin', 'Sanabria', 'Flores', '3729-4343', 'El Salvador', 'Santa Ana');
-INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, cudad, departamento)
-VALUES(cliente_seq.NextVal, 'Juan', 'Jose', 'Gomes', 'Acuña', '7122-3239', 'El Salvador', 'Santa Ana');
+INSERT INTO cliente(id_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, ciudad, departamento)
+VALUES(cliente_seq.NextVal, 'Juan', 'Jose', 'Gomes', 'Acuï¿½a', '7122-3239', 'El Salvador', 'Santa Ana');
 
 --INSERT TABLE TIPO_CUENTA
 INSERT INTO tipo_cuenta(id_tipo_cuenta, tipo_cuenta)

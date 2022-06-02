@@ -4,18 +4,24 @@
  */
 package Forms;
 
+import Models.ClienteModel;
+import static java.lang.System.exit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 
 public class IngresoPin extends javax.swing.JFrame {
-
-
-    /**
-     * Creates new form MainForm
-     */
+    
+    private ClienteModel cliente;
+    
     public String codigo;
+    
     public IngresoPin() {
         initComponents();
         this.setLocationRelativeTo(null);
         codigo="";
+        cliente = new ClienteModel();
     }
 
     /**
@@ -36,7 +42,7 @@ public class IngresoPin extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        codigo_input = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -127,8 +133,8 @@ public class IngresoPin extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 570, 60, 50));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 210, 50));
+        codigo_input.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel1.add(codigo_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 210, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cajeroP.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 400, 410));
@@ -238,80 +244,104 @@ public class IngresoPin extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-         codigo+="0";
-        this.jTextField1.setText(codigo);
+        codigo+="0";
+        validarCodigo();
+        this.codigo_input.setText(codigo);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        validarCodigo();
         codigo+="7";
-        this.jTextField1.setText(codigo);
+        this.codigo_input.setText(codigo);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-         codigo+="8";
-        this.jTextField1.setText(codigo);
+        codigo+="8";
+        validarCodigo();
+        this.codigo_input.setText(codigo);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-         codigo+="9";
-        this.jTextField1.setText(codigo);
+        codigo+="9";
+        validarCodigo();
+        this.codigo_input.setText(codigo);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-         codigo+="4";
-        this.jTextField1.setText(codigo);
+        codigo+="4";
+        validarCodigo();
+        this.codigo_input.setText(codigo);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
          codigo+="5";
-        this.jTextField1.setText(codigo);
+        validarCodigo();
+        this.codigo_input.setText(codigo);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-         codigo+="6";
-        this.jTextField1.setText(codigo);
+        codigo+="6";
+        validarCodigo();
+        this.codigo_input.setText(codigo);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          codigo+="1";
-        this.jTextField1.setText(codigo);
+         validarCodigo();
+        this.codigo_input.setText(codigo);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-         codigo+="2";
-        this.jTextField1.setText(codigo);
+        
+        codigo+="2";
+        validarCodigo();
+         this.codigo_input.setText(codigo);
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
          codigo+="3";
-        this.jTextField1.setText(codigo);
+         validarCodigo();
+        this.codigo_input.setText(codigo);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
         try{
             codigo= codigo.substring(0, codigo.length()-1);
-        this.jTextField1.setText(codigo);
+            this.codigo_input.setText(codigo);
         }catch(java.lang.StringIndexOutOfBoundsException e){
-            
+            System.out.println("Error: Indice invalido");
         }
         
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        Principal principal = new Principal();
-        principal.setVisible(true);
+        
+        System.out.println(codigo);
+        // Comprobar PIN
+        if(!this.cliente.existeCliente(codigo)){
+            JOptionPane.showMessageDialog(null,"El pin ingresado es inválido.");
+        }
+        else{
+            this.setVisible(false);
+            Principal principal = new Principal(this.codigo);
+            principal.setVisible(true);
+        }
+        
+        
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -319,6 +349,14 @@ public class IngresoPin extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton13ActionPerformed
 
+    public void validarCodigo(){
+        if(this.codigo.length() > 4){
+            JOptionPane.showMessageDialog(null,"Has alcanzado el máximo de 4 dígitos.");
+            this.codigo = codigo.substring(0,4);
+            this.codigo_input.setText(codigo);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -356,6 +394,7 @@ public class IngresoPin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField codigo_input;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
@@ -374,6 +413,5 @@ public class IngresoPin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
