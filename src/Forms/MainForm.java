@@ -16,10 +16,6 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         codigo="";
-        
-        Cliente obj = new Cliente();
-        
-        obj.listarCliente();
     }
 
     /**
