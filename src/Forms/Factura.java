@@ -49,10 +49,11 @@ public class Factura extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(94, 138, 130));
@@ -192,6 +193,13 @@ public class Factura extends javax.swing.JFrame {
             }
         });
 
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/denegar.png"))); // NOI18N
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -204,7 +212,9 @@ public class Factura extends javax.swing.JFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton13))
                         .addGap(44, 44, 44))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,7 +233,9 @@ public class Factura extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton13)
+                        .addGap(62, 62, 62)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -263,14 +275,14 @@ public class Factura extends javax.swing.JFrame {
         });
         jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 100, 60));
 
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.jpeg"))); // NOI18N
-        jButton19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ingresar.jpeg"))); // NOI18N
+        btn_cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                btn_cancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 163, 100, 60));
+        jPanel1.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 90, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 706, 713));
 
@@ -371,12 +383,19 @@ public class Factura extends javax.swing.JFrame {
         ct.setVisible(true);
     }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         IngresoPin pin = new IngresoPin();
         this.setVisible(false);
         pin.setVisible(true);
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        // TODO add your handling code here:
+        Ingresar ing = new Ingresar();
+        this.setVisible(false);
+        ing.setVisible(true);
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -421,14 +440,15 @@ public class Factura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

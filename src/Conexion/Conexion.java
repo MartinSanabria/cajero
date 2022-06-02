@@ -26,4 +26,23 @@ public final class Conexion {
         return this.conexion;
     }
        
+      public int agregar(String consulta) throws SQLException{
+        Statement add =this.conexion.createStatement();
+        return add.executeUpdate(consulta);
+    }
+    
+       public int actualizar(String consulta) throws SQLException{
+        Statement act =this.conexion.createStatement();
+        return act.executeUpdate(consulta);
+    }
+    
+     public ResultSet consultar(String sql) throws SQLException{
+         Statement cons=this.conexion.createStatement();
+         return cons.executeQuery(sql);
+     }
+    
+    
+    void cerrarConexion() throws SQLException{
+        this.conexion.close();
+    }   
 }

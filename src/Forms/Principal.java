@@ -55,6 +55,7 @@ public class Principal extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         btn_retirar = new javax.swing.JButton();
         btn_factura = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
@@ -181,6 +182,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/denegar.png"))); // NOI18N
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -193,7 +201,9 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton13))
                         .addGap(44, 44, 44))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,7 +222,9 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton13)
+                        .addGap(62, 62, 62)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,14 +263,14 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 100, 60));
 
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.jpeg"))); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ingresar.jpeg"))); // NOI18N
         btn_cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 100, 60));
+        jPanel1.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 90, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 706, 713));
 
@@ -359,10 +371,18 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         // TODO add your handling code here:
+        Ingresar ig = new Ingresar();
+        this.setVisible(false);
+        ig.setVisible(true);
+        
+    }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
         IngresoPin pin = new IngresoPin();
         this.setVisible(false);
         pin.setVisible(true);
-    }//GEN-LAST:event_btn_cancelarActionPerformed
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,6 +427,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
