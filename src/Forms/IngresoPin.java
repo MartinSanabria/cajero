@@ -330,7 +330,6 @@ public class IngresoPin extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         
-        System.out.println(codigo);
         // Comprobar PIN
         if(!this.cliente.existeCliente(codigo)){
             JOptionPane.showMessageDialog(null,"El pin ingresado es inválido.");
@@ -339,6 +338,7 @@ public class IngresoPin extends javax.swing.JFrame {
             this.setVisible(false);
             Principal principal = new Principal(this.codigo);
             principal.setVisible(true);
+            
         }
         
         

@@ -4,6 +4,8 @@
  */
 package Forms;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author Luis
@@ -13,11 +15,14 @@ public class Retiro extends javax.swing.JFrame {
     /**
      * Creates new form MainForm
      */
+    Principal pl;
     public String codigo;
+    public String cCodigo;
     public Retiro() {
         initComponents();
         this.setLocationRelativeTo(null);
         codigo="$";
+        this.cCodigo=pl.codigo;
         this.jTextField2.setText(codigo);
     }
 
@@ -280,7 +285,11 @@ public class Retiro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    public void retirar(){
+        ResultSet rs=null;
+        String data="";
+        
+    }
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
          codigo+="0";

@@ -53,16 +53,35 @@ public class ClienteModel {
     public boolean existeCliente(String codigo){
         boolean existe = false;
         
+        try{
+            String funtion = "create or replace function existeCliente\n" +
+                                " (codigo in varchar) \n" +
+                                " return number \n" +
+                                " is \n" +
+                                " cant number; \n" +
+                                " begin\n" +
+                                " SELECT COUNT(*) into cant FROM cuenta WHERE codigo_cuenta=codigo; \n" +
+                                " return cant; \n" +
+                                " end existeCliente; ";
+            
+            Connection conexion = this.ObjConexion.getConexion();
+            PreparedStatement pstm = conexion.prepareStatement(funtion);
+            ResultSet resultados = pstm.executeQuery();
+            
+        }catch(SQLException e){
+            
+        }
+        
         try {
-            String sql = "SELECT COUNT(*) as cantidad FROM cuenta WHERE codigo_cuenta = ?";
+            String sql = "select existeCliente('?') as cantidad from dual";
             
             Connection conexion = this.ObjConexion.getConexion();
             PreparedStatement pstm = conexion.prepareStatement(sql);
-            pstm.setString(1, codigo);
+            pstm.setString(0, codigo);
             ResultSet resultados = pstm.executeQuery();
-            
             while(resultados.next()){
-                int cantidad = resultados.getInt("cantidad");
+                int cantidad = resultados.getInt(0);
+                System.out.println(resultados.getInt(0));
                 existe = (cantidad > 0);
             }
             
